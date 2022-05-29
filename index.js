@@ -49,6 +49,27 @@ function lakukanLooping(arrPegawai) {
         "Jumlah Pria dan Wanita berimbang"
   */
   let komentar = null;
+  const namaLengkap = [];
+  for (let i = 0; i < dataYangAkanDilooping.length; i++) {
+    namaLengkap.push(
+      dataYangAkanDilooping[i].namaDepan +
+        " " +
+        dataYangAkanDilooping[i].namaBelakang
+    );
+    if (dataYangAkanDilooping[i].jenisKelamin === "M") {
+      jumlahPria += 1;
+    } else {
+      jumlahWanita += 1;
+    }
+  }
+  hasilLooping = namaLengkap;
+  if (jumlahPria > jumlahWanita) {
+    komentar = "Jumlah Pria lebih banyak dari Wanita";
+  } else if (jumlahPria < jumlahWanita) {
+    komentar = "Jumlah Wanita lebih banyak dari Pria";
+  } else {
+    komentar = "Jumlah Pria dan Wanita berimbang";
+  }
 
   // ! JANGAN DIMODIFIKASI
   return {
